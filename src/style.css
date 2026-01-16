@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply antialiased text-gray-800 bg-[#f8f5f0];
+    /* Cream background */
+  }
+
+  /* Geometric Pattern Background */
+  .bg-islamic-pattern {
+    background-color: #f8f5f0;
+    background-image: radial-gradient(#1e3a8a 0.5px, transparent 0.5px), radial-gradient(#1e3a8a 0.5px, #f8f5f0 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    /* Removed opacity: 0.1 from here as it affects children. Handle opacity via utility classes or rgba if needed */
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.7s ease-out forwards;
+  }
+
+  /* Language selector with flags */
+  #lang-select {
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    background-size: 20px 15px;
+    padding-left: 36px !important;
+  }
+
+  #lang-select option {
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: 6px center;
+    background-size: 20px 15px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  #app {
+    padding: 0;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}
+
+@theme {
+  --font-sans: 'Inter', 'system-ui', 'sans-serif';
+  --font-arabic: 'Tajawal', 'sans-serif';
+
+  /* Islamic Art Palette */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-500: #1e3a8a;
+  /* Deep Blue */
+  --color-primary-600: #172554;
+  --color-primary-700: #0f172a;
+
+  --color-accent-500: #d97706;
+  /* Gold/Amber */
+  --color-accent-600: #b45309;
+}
