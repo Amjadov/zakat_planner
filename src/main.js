@@ -161,9 +161,9 @@ function WizardStep2(state, shouldAnimate = true) {
       </div>
 
       <div class="bg-white rounded-xl shadow-lg border-2 border-gray-100 divide-y divide-gray-100 overflow-hidden">
-        <div class="bg-primary-50 p-4 hidden md:flex justify-between items-center text-primary-900 border-b border-gray-200 text-xs uppercase tracking-wider font-bold font-arabic">
+        <div class="bg-primary-50 p-4 flex justify-between items-center text-primary-900 border-b border-gray-200 text-[10px] md:text-xs uppercase tracking-wider font-bold font-arabic">
           <div style="${isRtl ? 'margin-right: 56px;' : 'margin-left: 56px;'}">${t('item_name', state.lang)}</div>
-          <div class="w-40 text-center">${t('price_per_kg', state.lang)}</div>
+          <div class="w-32 md:w-40 text-center">${t('price_per_kg', state.lang)}</div>
         </div>
         ${selected.map(item => {
     const price = state.prices[item.id] || '';
